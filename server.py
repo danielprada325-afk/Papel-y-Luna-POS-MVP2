@@ -354,8 +354,12 @@ print("==============================")
 print("")
 
 
+import os
+
+PORT = int(os.environ.get("PORT", 8000))
+
 server = ThreadingHTTPServer(
-    ("localhost", 8000),
+    ("0.0.0.0", PORT),
     POSHandler
 )
 
